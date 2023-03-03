@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <title>GigLink</title>
+</head>
+
+<body>
+
+    <nav class="navbar bg-dark">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="navbar-brand h1 text-light">GigLink</h1>
+            <form action="#" class="d-flex">
+                <input type="search" name="search" id="" placeholder="Search" class="form-control me-1">
+                <button class="btn btn-success d-flex justify-content-center align-items-center" type="submit"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg></button>
+            </form>
+            <a href="/logout_user" class="btn btn-danger">Logout</a>
+        </div>
+    </nav>
+
+    <div class="container my-3">
+
+        <div class="d-flex justify-content-center align-items-center mb-2">
+
+            {% if not results %}
+            <h1>No musicians matched: {{search_query}}</h1>
+            {% else %}
+            <h1>Search results for: {{search_query}}</h1>
+            {% endif %}
+
+        </div>
+
+        <div class="row g-3 d-flex justify-content-center">
+
+            {% if results %}
+
+            {% for musician in results%}
+            <div class="col-4">
+                <div class="card">
+                    <img src="{{musician.image_url}}" alt="" class="card-img">
+                    <div class="card-body">
+                        <h5 class="card-title">{{musician.stage_name}}</h5>
+                        <p class="card-text">{{musician.about}}</p>
+                        <a href="/musician/profile/{{musician.id}}" class="btn btn-primary">Go to profile</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+
+
+
+
+
+
+        </div>
+    </div>
+</body>
+
+</html>
