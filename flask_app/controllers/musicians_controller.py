@@ -1,7 +1,19 @@
+import os
+
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
 
 from flask_app.models.musicians_model import Musician
+
+
+
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
+
+
+CLIENT_ID =  os.environ.get("CLIENT_ID")
+CLIENT_SECRET =  os.environ.get("CLIENT_SECRET")
 
 
 
@@ -122,7 +134,9 @@ def show_musician(musician_id):
 
     musician = Musician.get_one_by_id({"id": musician_id})
 
-    return render_template("musician_profile.html", musician = musician)
+    artist_id = get_artist_id(musician.stage_name)
+
+    return render_template("musician_profile.html", musician = musician, artist_id = artist_id)
 
 
 @app.route("/musician/my_gigs")
@@ -144,3 +158,20 @@ def my_gigs():
 
 
 
+def get_spotify_client_cred():
+    return SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
+
+
+
+def get_artist_id(artist_name):
+    auth_manager = get_spotify_client_cred()
+    sp = spotipy.Spotify(auth_manager = auth_manager)
+
+    results = sp.search(artist_name, type = "artist")
+
+    if not results["artists"]["items"]:
+        return False
+
+
+    artist_id = results["artists"]["items"][0]["id"]
+    return artist_id
