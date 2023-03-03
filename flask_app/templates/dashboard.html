@@ -47,12 +47,14 @@
                     <div class="musician-image">
                         {% if musician.image_url is none or musician.image_url == "" %}
 
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                            class="bi bi-person-circle default-image" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                        </svg>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                class="bi bi-person-circle default-image pt-2" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </div>
                         {% else %}
 
 
@@ -71,85 +73,6 @@
             {% endfor %}
 
 
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-4">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                        alt="" class="card-img">
-                    <div class="card-body">
-                        <h5 class="card-title">Band Name Here</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quidem
-                            tenetur, omnis neque laboriosam quisquam qui. Nemo recusandae asperiores nulla soluta
-                            quaerat amet repellat. Ad?</p>
-                        <a href="#" class="btn btn-primary">Go to profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-
-                    <div style="max-height: 300px; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1558098329-a11cff621064?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=780&q=80"
-                            alt="" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Band Name Here</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quidem
-                            tenetur, omnis neque laboriosam quisquam qui. Nemo recusandae asperiores nulla soluta
-                            quaerat amet repellat. Ad?</p>
-                        <a href="#" class="btn btn-primary">Go to profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                        alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Band Name Here</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quidem
-                            tenetur, omnis neque laboriosam quisquam qui. Nemo recusandae asperiores nulla soluta
-                            quaerat amet repellat. Ad?</p>
-                        <a href="#" class="btn btn-primary">Go to profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                        alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Band Name Here</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quidem
-                            tenetur, omnis neque laboriosam quisquam qui. Nemo recusandae asperiores nulla soluta
-                            quaerat amet repellat. Ad?</p>
-                        <a href="#" class="btn btn-primary">Go to profile</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1549834125-82d3c48159a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-                        alt="">
-                    <div class="card-body">
-                        <h5 class="card-title">Band Name Here</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi quidem
-                            tenetur, omnis neque laboriosam quisquam qui. Nemo recusandae asperiores nulla soluta
-                            quaerat amet repellat. Ad?</p>
-                        <a href="#" class="btn btn-primary">Go to profile</a>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
