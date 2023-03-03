@@ -40,7 +40,7 @@ class Musician:
     # ----- READ -----
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM musicians;"
+        query = "SELECT * FROM musicians ORDER BY id DESC;"
 
         results = connectToMySQL(DATABASE).query_db(query)
 
